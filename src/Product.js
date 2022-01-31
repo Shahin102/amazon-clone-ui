@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Product.css'
 import { useStateValue } from './StateProvider'
 
-function Product({ id, title, image, price, rating }) {
+const MAX_RATING = 5;
+const MIN_RATING = 1;
+
+function Product({ id, title, price, image }) {
     const [{ basket }, dispatch] = useStateValue();
     // console.log('this is the basket >>>')
+
+    const [rating] = useState(
+        Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
+    );
+
 
     const addToBasket = () => {
         // dispatch the item into the data layer
@@ -13,9 +21,9 @@ function Product({ id, title, image, price, rating }) {
             item: {
                 id: id,
                 title: title,
-                image: image,
                 price: price,
                 rating: rating,
+                image: image,
             },
         });
     };
