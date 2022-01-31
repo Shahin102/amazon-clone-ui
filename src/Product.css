@@ -10,7 +10,14 @@
     min-width: 100px;
     background-color: white;
     z-index: 1;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+}
 
+.product:hover {
+    transform: scale(1.07);
 }
 
 .product > img {
@@ -47,5 +54,3 @@
 .product__rating {
     display: flex;
 }
-
-

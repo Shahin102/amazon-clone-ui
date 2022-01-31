@@ -15,3 +15,10 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
+
+.checkout {
+    overflow: hidden;
+    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 2000ms ease-in;
+    cursor: pointer;
+}

@@ -10,7 +10,8 @@ import {
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from './reducer';
 import { useState } from 'react';
-
+import FlipMove from 'react-flip-move'
+import { forwardRef } from 'react'
 
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
@@ -33,6 +34,19 @@ function Payment() {
 
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState("");
+
+    const AnimatedCheckOut = forwardRef(({ item, index }, ref) => (
+        <div ref={ref}>
+            <CheckoutProduct className="pay__item"
+                key={`anim ${index} ${item.id}`}
+                title={item.title}
+                id={item.id}
+                rating={item.rating}
+                price={item.price}
+                image={item.image}
+            />
+        </div>
+    ));
 
     return (
         <div className='payment'>
@@ -59,15 +73,19 @@ function Payment() {
                         <h3>Review items and delivery</h3>
                     </div>
                     <div className='payment__items'>
-                        {basket.map(item => (
-                            <CheckoutProduct
-                                id={item.id}
-                                title={item.title}
-                                image={item.image}
-                                price={item.price}
-                                rating={item.rating}
-                            />
-                        ))}
+                        <FlipMove
+                            staggerDelayBy={150}
+                            enterAnimation="accordionVertical"
+                            leaveAnimation="accordionVertical"
+                        >
+                            {basket.map((item, i) => (
+                                <AnimatedCheckOut
+                                    key={`an ${i} ${item.id}`}
+                                    item={item}
+                                    index={i}
+                                />
+                            ))}
+                        </FlipMove>
                     </div>
                 </div>
 
@@ -93,7 +111,7 @@ function Payment() {
                                     prefix={"$"}
                                 />
                                 <button disabled={processing || disabled || succeeded}>
-                                    <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                                    <span className='buy__button'>{processing ? <p>Processing</p> : "Buy Now"}</span>
                                 </button>
 
                             </div>
