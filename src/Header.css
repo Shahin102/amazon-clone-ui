@@ -24,7 +24,7 @@
 .header__search {
     display: flex;
     flex: 1;
-    align-items: center;
+    align-items: left;
     border-radius: 24px;
 }
 
@@ -68,4 +68,124 @@
     margin-right: 10px;
 }
 
+
+/*------------------- theme ------------------ */
+
+/* ---global style--- */
+.light__theme {
+    --primary-color: #007bff;
+    --background-light-color-2: rgba(3,127,255,.3);
+    --white-color: #cd9042;
+}
+
+/* ---global style--- */
+.dark__theme {
+    --primary-color: #007bff;
+    --background-light-color-2: rgba(3,127,255,.3);
+    --white-color: #FFF;
+}
+
+
+/* Floating Toggler */
+.light__dark--theme {
+    position: relative;
+    background-color: var(--background-light-color-2);
+    width: 6.5rem;
+    height: 2.5rem;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.MuiIconButton-label {
+    color: var(--primary-color);
+}
+
+.light__dark--theme .bright__icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    color: var(--white-color);
+};
+
+
+/* applying ---> Light theme */
+
+.light__theme .product {
+    background-color: #FFF;
+}
+
+
+/* applying ---> Dark theme */
+
+.dark__theme .header__searchInput {
+    color: white;
+    background-color: #f0c14b;;
+    box-shadow: 0px 0px 3px;
+    -moz-transition: all 0.5s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.5s ease-in;
+    /* Opera */
+    -o-transition: all 0.5s ease-in;
+    /* Standard */
+    transition: all 0.5s ease-in;
+}
+
+.dark__theme .product {
+    color: white;
+    background-color: #1b1e1f;
+    box-shadow: 5px 5px 50px;
+    -moz-transition: all 0.5s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.5s ease-in;
+    /* Opera */
+    -o-transition: all 0.5s ease-in;
+    /* Standard */
+    transition: all 0.5s ease-in;
+}
+
+.dark__theme .checkout{
+    background-color: #1b1e1f;
+}
+
+.dark__theme .checkout__left {
+    color: #FFF;
+}
+
+.dark__theme .login {
+    background-color: #1b1e1f;
+}
+
+.dark__theme .login__logo {
+    background-color: white;
+}
+
+.dark__theme .login__container {
+    color: white;
+}
+
+.dark__theme .login__input {
+    color: white;
+    background-color: gray;
+}
+
+.dark__theme .subtotal {
+    background-color: gray;
+}
+
+.dark__theme .payment__container {
+    color: black;
+    background-color: rgb(234, 237, 237);
+}
+
+.dark__theme .payment__section {
+    color: white;
+    background-color: #1b1e1f;
+}
+
+.dark__theme .buy__button {
+    color: black;
+}
 
