@@ -1,3 +1,8 @@
+#### This project is inspired by --> ####
+##### YouTube: https://www.youtube.com/watch?v=RDV3Z1KCBvo&ab_channel=CleverProgrammer #####
+##### GitHub: https://github.com/CleverProgrammers/react-challenge-amazon-clone #####
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
